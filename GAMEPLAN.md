@@ -71,7 +71,8 @@ Characters keep all abilities and innates from prior evolution stages.
 
 Ability design should become more specialized as a character evolves:
 
-- Starter family abilities are self-affecting only, mostly general stat upgrades or straightforward attacks
+- Starter family abilities are self-affecting only: personal stats, basic attacks, and self-improvement
+- Buffs, debuffs, auras, and team-facing effects start at subclass or final evolution tiers
 - Subclass abilities are more specialized and begin defining the character's role
 - Final evolution abilities are heavily specialized, unique, and build-defining
 
@@ -141,14 +142,15 @@ Assumptions for this draft:
 
 - Auras affect adjacent allied slots.
 - Buffs and debuffs may stack if timing or builds allow it.
-- Starter abilities are simple and self-focused, subclasses specialize, and final evolutions are unique or build-defining.
+- Starter abilities are simple and self-focused, with no buffs, debuffs, auras, or team-facing effects.
+- Subclasses specialize, and final evolutions are unique or build-defining.
 
 ### DINO
 
 - **Thick Hide**: Passive that improves survivability.
 - **Heavy Bite**: Active attack against the closest enemy.
-- **Battle Roar**: Active self-buff that improves this unit's combat presence.
-- **Enduring Heart**: Passive that improves debuff resistance and recovery.
+- **Battle Roar**: Active self-technique that improves this unit's combat presence.
+- **Enduring Heart**: Passive that improves health recovery and staying power.
 
 ### Herbivore
 
@@ -251,7 +253,7 @@ Assumptions for this draft:
 - **Arcane Scales**: Passive that improves magic durability.
 - **Spit Bolt**: Simple active spell attack.
 - **Focused Mind**: Passive that improves cast speed or ability power.
-- **Hexing Glare**: Active debuff against the closest enemy.
+- **Inner Glare**: Active self-focus that improves this unit's next spell.
 
 ### Snake
 
@@ -354,7 +356,7 @@ Assumptions for this draft:
 - **Light Frame**: Passive dodge improvement.
 - **Dive Strike**: Active attack that can ignore normal closest-target rules.
 - **Sharp Eyes**: Passive critical or targeting improvement.
-- **Wingbeat**: Active debuff or small displacement-style disruption.
+- **Wingbeat**: Active self-movement technique that improves this unit's evasiveness.
 
 ### Bird of Prey
 
