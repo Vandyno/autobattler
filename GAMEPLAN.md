@@ -144,11 +144,47 @@ Assumptions for this draft:
 - Buffs and debuffs may stack if timing or builds allow it.
 - Starter abilities are simple and self-focused, with no buffs, debuffs, auras, or team-facing effects.
 - Subclasses specialize, and final evolutions are unique or build-defining.
+- Abilities should create stat archetypes, not just generic effects. A player should be able to tell what stats and items a species wants.
+- Avoid making all flyers feel like "the unit that attacks backline." Flyers should split into leader, assassin, curse support, flock support, mimicry, control, bleed, and large-threat identities.
+
+### Final Evolution Stat Targets
+
+These are intended build directions, not hard restrictions.
+
+| Species | Primary Stat Fantasy |
+| --- | --- |
+| Triceratops | Strength |
+| Ankylosaurus | Strength |
+| Brachiosaurus | Intelligence |
+| Tyrannosaurus | Strength |
+| Velociraptor | Agility |
+| Carnotaurus | Strength/Agility |
+| Gallimimus | Agility |
+| Oviraptor | Intelligence/Agility |
+| Troodon | Intelligence |
+| Rattlesnake | Intelligence |
+| Constrictor | Strength |
+| Cobra | Intelligence |
+| Chameleon | Agility |
+| Monitor | Strength/Intelligence |
+| Gecko | Agility |
+| Crocodile | Strength |
+| Death Roller | Strength |
+| Gharial | Agility/Intelligence |
+| Eagle | Agility |
+| Falcon | Agility |
+| Owl | Intelligence |
+| Raven | Intelligence |
+| Goose | Strength |
+| Parrot | Intelligence |
+| Rhamphorhynchus | Agility |
+| Pteranodon | Intelligence |
+| Quetzalcoatlus | Strength/Intelligence |
 
 ### DINO
 
 - **Thick Hide**: Passive that improves survivability.
-- **Heavy Bite**: Active attack against the closest enemy.
+- **Heavy Bite**: Active attack against the closest enemy that establishes Strength as Dino's basic damage stat.
 - **Battle Roar**: Active self-technique that improves this unit's combat presence.
 - **Enduring Heart**: Passive that improves health recovery and staying power.
 
@@ -210,11 +246,11 @@ Assumptions for this draft:
 
 ### Carnotaurus
 
-- **Innate - Brutal Rush**: Gains power when charging into close targets.
+- **Innate - Brutal Rush**: Gains power when charging into close targets, leaning into reckless Strength/Agility aggression.
 - **Headbutt**: Active attack that can interrupt a cast.
 - **Savage Impact**: Active attack that benefits from armor penetration.
-- **Reckless Hide**: Buff that trades safety for damage.
-- **Momentum Beast**: Passive that rewards repeated attacks without switching targets.
+- **Reckless Hide**: Buff that trades safety for attack speed, armor penetration, or missing-health damage.
+- **Momentum Beast**: Passive that rewards repeated attacks without switching targets, especially in risky low-health fights.
 
 ### Omnivore
 
@@ -251,7 +287,7 @@ Assumptions for this draft:
 ### REPTILE
 
 - **Arcane Scales**: Passive that improves magic durability.
-- **Spit Bolt**: Simple active spell attack.
+- **Spit Bolt**: Simple active spell attack that establishes Intelligence as Reptile's basic damage stat.
 - **Focused Mind**: Passive that improves cast speed or ability power.
 - **Inner Glare**: Active self-focus that improves this unit's next spell.
 
@@ -305,9 +341,9 @@ Assumptions for this draft:
 
 ### Monitor
 
-- **Innate - Relentless Monitor**: Applies steady pressure with spells and bites.
+- **Innate - Relentless Monitor**: Applies steady pressure as a Strength/Intelligence battle mage.
 - **Septic Bite**: Active attack that applies a weakening debuff.
-- **Heavy Claws**: Active physical/magic hybrid attack.
+- **Heavy Claws**: Active physical/magic hybrid attack that rewards mixed stat investment.
 - **Predatory Stamina**: Passive sustain.
 - **Ruinous Spit**: Active spell that reduces armor or resistance.
 
@@ -354,7 +390,7 @@ Assumptions for this draft:
 ### FLYER
 
 - **Light Frame**: Passive dodge improvement.
-- **Dive Strike**: Active attack that can ignore normal closest-target rules.
+- **Dive Strike**: Active attack that can ignore normal closest-target rules and establishes Agility as Flyer's basic damage stat.
 - **Sharp Eyes**: Passive critical or targeting improvement.
 - **Wingbeat**: Active self-movement technique that improves this unit's evasiveness.
 
