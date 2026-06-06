@@ -71,7 +71,7 @@ Characters keep all abilities and innates from prior evolution stages.
 
 Ability design should become more specialized as a character evolves:
 
-- Starter family abilities are mostly general stat upgrades or straightforward attacks
+- Starter family abilities are self-affecting only, mostly general stat upgrades or straightforward attacks
 - Subclass abilities are more specialized and begin defining the character's role
 - Final evolution abilities are heavily specialized, unique, and build-defining
 
@@ -141,13 +141,13 @@ Assumptions for this draft:
 
 - Auras affect adjacent allied slots.
 - Buffs and debuffs may stack if timing or builds allow it.
-- Starter abilities are simple, subclasses specialize, and final evolutions are unique or build-defining.
+- Starter abilities are simple and self-focused, subclasses specialize, and final evolutions are unique or build-defining.
 
 ### DINO
 
 - **Thick Hide**: Passive that improves survivability.
 - **Heavy Bite**: Active attack against the closest enemy.
-- **Battle Roar**: Active buff that improves nearby allies.
+- **Battle Roar**: Active self-buff that improves this unit's combat presence.
 - **Enduring Heart**: Passive that improves debuff resistance and recovery.
 
 ### Herbivore
