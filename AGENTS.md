@@ -1,6 +1,6 @@
 # Project Guidance
 
-Before adding new features, review the codebase like a senior VB.NET developer.
+Before adding new features, review the codebase like a senior Godot developer.
 
 Your goals:
 1. Keep the code readable for a human programmer.
@@ -19,6 +19,7 @@ For this project, prioritize:
 - Clear dinosaur/stat/ability data structures
 - Combat logic that is easy to balance
 - Evolution tree logic that is easy to expand
-- No "everything happens in Form1.vb" disasters
+- No "everything happens in one giant scene script" disasters
+- Keep reusable game rules in scripts/resources where practical, not buried in UI scenes
 - Simple save/load structure
 - Names that make sense to a non-expert
