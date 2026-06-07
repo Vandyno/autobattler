@@ -40,7 +40,7 @@ Attack Speed and Cast Speed use meter-based timing. The exact fill-rate formulas
 
 Units do not move during combat after the fight begins. Formation choices matter because starting slots affect distance, targeting, adjacency, lines, and aura coverage.
 
-Normal attacks usually target the closest enemy. Midline and backline characters can be attacked if they are closer than a frontline character. Abilities, class traits, equipment, or combat context may override this. Flyers are an important exception candidate because their rogue identity may let them attack less restricted targets.
+Normal attacks usually target the closest enemy. Midline and backline characters can be attacked if they are closer than a frontline character. Abilities, class traits, equipment, or combat context may override this. Flyers are expected to attack from the back line, so their identity should come from how they use that safer position rather than from universal enemy-backline targeting.
 
 For now, defeated team members revive after combat.
 
@@ -145,11 +145,11 @@ Abilities use no numbers yet. This section is for names and rough design directi
 Assumptions for this draft:
 
 - Auras affect adjacent allied slots.
-- Buffs and debuffs may stack if timing or builds allow it.
+- Buffs and debuffs apply as individual effect instances, allowing multiple applications of the same effect to stack.
 - Starter abilities are simple and self-focused, with no buffs, debuffs, auras, or team-facing effects.
 - Subclasses specialize, and final evolutions are unique or build-defining.
 - Abilities should create stat archetypes, not just generic effects. A player should be able to tell what stats and items a species wants.
-- Avoid making all flyers feel like "the unit that attacks backline." Flyers should split into leader, assassin, curse support, flock support, mimicry, control, bleed, and large-threat identities.
+- Avoid making all flyers feel like "the unit that attacks the enemy backline." Their shared baseline is attacking from the player's back line. Their branches should split into leader, assassin, curse support, flock support, mimicry, control, bleed, and large-threat identities.
 
 ### Final Evolution Stat Targets
 
@@ -574,6 +574,172 @@ Tagging rules:
 - Tags should be broad enough for equipment to modify them.
 - Avoid one-off tags unless a real item or system needs them.
 - If an ability has multiple behaviors, it should have multiple tags.
+
+## Ability Implementation Plan
+
+This section describes how abilities should become implementable. It is still planning, not a commitment to exact balance numbers.
+
+The main rule: ability behavior should be data-first. Scenes and UI should display ability data or ask combat systems to execute it, but they should not contain the reusable game rules.
+
+### Ability Data Shape
+
+Each ability should eventually have one clear definition with:
+
+- Stable ability ID, such as `dino_heavy_bite`
+- Display name
+- Short design description
+- Source class or evolution branch
+- Tier: starter, subclass, or final form
+- Kind: passive, active, or innate
+- Tags from the shared tag list
+- Target rule, such as self, closest enemy, adjacent allies, enemy line, or priority enemy
+- Timing rule for active abilities
+- Rank data for ability point upgrades
+- One or more effect entries
+
+Rank data should make ability points explicit:
+
+- Rank 0 means locked
+- Rank 1 means unlocked
+- Higher ranks modify the same ability rather than creating hidden replacement abilities
+- Each rank should say what changes in plain language before numbers are assigned
+
+Effect entries should describe reusable combat actions, not custom one-off scripts:
+
+- Damage
+- Stat modifier
+- Status effect application
+- Shield or guard
+- Cleanse
+- Interrupt
+- Targeting override
+- Aura application
+
+This keeps abilities readable and makes future equipment modifiers easier to apply.
+
+### Related Data Structures
+
+Stats should live in a stat data structure, not directly in unit scenes.
+
+Expected stat data:
+
+- Primary stats: Strength, Agility, Intelligence
+- Offensive stats: Attack Damage, Attack Speed, Critical Chance, Critical Damage, Ability Power, Cast Speed
+- Defensive stats: Health, Armor or Physical Resistance, Debuff Resistance, Dodge Chance, Healing Power
+- Special stats: Armor Penetration, Lifesteal, Thorns
+
+Status effects should have their own definitions:
+
+- Stable effect ID
+- Positive or negative category
+- Duration rule
+- Stacking rule: each application creates its own effect instance unless a specific effect says otherwise
+- Tick rule, if damage-over-time or repeated value matters
+- Tags if equipment or abilities can modify them
+
+Evolution classes should have their own definitions:
+
+- Stable class ID
+- Display name
+- Tier
+- Parent class ID, except starters
+- Child class IDs, except final forms
+- Four point-spend abilities
+- One innate ability for subclass and final-form branches
+
+Character combat state should be separate from definitions:
+
+- Current Health
+- Current stat totals
+- Current ability ranks
+- Active status effects
+- Attack and cast meters
+- Temporary combat-only modifiers
+
+Definitions answer "what is this thing?" Combat state answers "what is happening to this unit right now?"
+
+### Starter Ability Rules
+
+Starter family abilities should stay simple and self-focused.
+
+Allowed starter ability patterns:
+
+- Passive self stat bonuses
+- Active basic attacks against a normal enemy target
+- Self-only active techniques
+- Simple scaling identities that teach the class fantasy
+
+Avoid in starter abilities for now:
+
+- Ally buffs
+- Enemy debuffs, except very light basic attack riders if later approved
+- Auras
+- Cleanses
+- Formation-wide effects
+- Complex priority targeting
+
+Subclass and final-form abilities are where team-facing effects, debuffs, auras, control, and specialized targeting should begin.
+
+### Targeting Plan
+
+Targeting should use named target rules rather than custom logic per ability whenever possible.
+
+Initial target rules to support:
+
+- Self
+- Closest enemy
+- Adjacent allies
+- Adjacent enemies
+- Ally line
+- Enemy line
+- Piercing line
+- Cluster around target
+- Injured enemy
+- Priority enemy
+
+Priority enemy targeting should remain rare. It should be reserved for specific species identities, especially some Flyer branches, not treated as a generic best-target system.
+
+### Timing Plan
+
+Active abilities should use automatic timing during combat.
+
+The current plan is:
+
+- Normal attacks use an attack meter affected by Attack Speed
+- Active abilities use cooldown or cast meters affected by Cast Speed where appropriate
+- Passive abilities do not use meters
+- Innate abilities can be always-on, start-of-combat, or conditional
+
+The exact fill-rate formulas are not ready yet. They should be designed before combat tuning so speed scaling stays readable and does not explode balance.
+
+### Validation Rules
+
+When the data model is implemented, validation should catch common mistakes early:
+
+- Every ability has a stable ID and display name
+- Every ability uses only known tags
+- Every ability uses a known target rule
+- Active abilities have a timing rule
+- Rank numbers are contiguous
+- Starter classes have exactly four point-spend abilities
+- Subclasses and final forms have exactly four point-spend abilities plus one innate
+- Starter abilities do not use ally buffs, enemy debuffs, auras, or advanced target rules unless deliberately approved
+- Evolution branches point to valid parents and children
+
+These checks should run without opening UI scenes.
+
+### First Implementation Slice
+
+When implementation begins, the safest first slice is:
+
+1. Create stat, tag, target-rule, and status-effect IDs.
+2. Create ability definition, ability rank, and ability effect data structures.
+3. Create evolution class definitions.
+4. Add the three starter families only: Dino, Reptile, and Flyer.
+5. Add a small validation script that checks the starter ability data.
+6. Add a headless or text-only combat proof later, after the data validates.
+
+Do not start by building a large combat scene. The first usable proof should be data loading and validation, then a minimal combat simulation that does not depend on UI.
 
 ## Damage And Effects
 
