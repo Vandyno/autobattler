@@ -36,6 +36,8 @@ Current formation concept:
 
 Combat is real-time autobattler combat. Attack speed and cast speed should matter as timing stats.
 
+Attack Speed and Cast Speed use meter-based timing. The exact fill-rate formulas need careful design before implementation so speed scaling stays readable and balanceable.
+
 Units do not move during combat after the fight begins. Formation choices matter because starting slots affect distance, targeting, adjacency, lines, and aura coverage.
 
 Normal attacks usually target the closest enemy. Midline and backline characters can be attacked if they are closer than a frontline character. Abilities, class traits, equipment, or combat context may override this. Flyers are an important exception candidate because their rogue identity may let them attack less restricted targets.
@@ -594,7 +596,7 @@ These are conceptual combat functions to define before implementation.
 - Whether final forms should be strict upgrades, sidegrades, or build-defining transformations
 - How equipment should interact with class identity
 - How the 3-across and 6-down grid maps to each side's formation slots
-- How the real-time timing model should work for Attack Speed, Cast Speed, cooldowns, and effect durations
+- Exact meter fill-rate formulas for Attack Speed, Cast Speed, cooldowns, and effect durations
 - What the player chooses between battles
 - How branching zones should generate risk and reward
 - What resources exist during a run
