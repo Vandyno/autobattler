@@ -36,6 +36,8 @@ Current formation concept:
 
 Combat is real-time autobattler combat. Attack speed and cast speed should matter as timing stats.
 
+Units do not move during combat after the fight begins. Formation choices matter because starting slots affect distance, targeting, adjacency, lines, and aura coverage.
+
 Normal attacks usually target the closest enemy. Midline and backline characters can be attacked if they are closer than a frontline character. Abilities, class traits, equipment, or combat context may override this. Flyers are an important exception candidate because their rogue identity may let them attack less restricted targets.
 
 For now, defeated team members revive after combat.
@@ -185,13 +187,13 @@ These are intended build directions, not hard restrictions.
 
 - **Thick Hide**: Passive that improves survivability.
 - **Heavy Bite**: Active attack against the closest enemy that establishes Strength as Dino's basic damage stat.
-- **Battle Roar**: Directly increases this unit's Health.
+- **Bulk Up**: Directly increases this unit's Health.
 - **Enduring Heart**: Passive that improves health recovery and staying power.
 
 ### Herbivore
 
 - **Innate - Herd Guard**: Adjacent allies gain protection while this unit is alive.
-- **Rooted Stand**: Passive that improves durability while holding position.
+- **Rooted Stand**: Passive that improves durability.
 - **Stomp**: Active attack that can weaken enemies in a line.
 - **Nourishing Presence**: Aura that improves healing received by adjacent allies.
 - **Patient Defense**: Passive that rewards surviving long fights.
@@ -240,7 +242,7 @@ These are intended build directions, not hard restrictions.
 
 - **Innate - Pack Hunter**: Gains bonuses when allies attack the same target.
 - **Flurry Claws**: Fast active multi-hit attack.
-- **Hamstring**: Active attack that slows or weakens movement-based targeting.
+- **Hamstring**: Active attack that slows attack timing or weakens target pressure.
 - **Open Wound**: Debuff that makes repeated hits more valuable.
 - **Killer Instinct**: Passive that improves crit chains.
 
@@ -328,7 +330,7 @@ These are intended build directions, not hard restrictions.
 - **Innate - Cold Blooded**: Gains defensive value from timing and patience.
 - **Sun-Baked Scales**: Passive resistance buff.
 - **Elemental Spit**: Active spell attack.
-- **Skitter**: Buff that improves dodge or repositioning logic later.
+- **Skitter**: Buff that improves dodge or target avoidance.
 - **Distracting Colors**: Active debuff that weakens enemy targeting.
 
 ### Chameleon
@@ -365,7 +367,7 @@ These are intended build directions, not hard restrictions.
 
 ### Crocodile
 
-- **Innate - Still Water**: Becomes stronger while holding a line.
+- **Innate - Still Water**: Becomes stronger based on its chosen line.
 - **Death Clamp**: Active attack that weakens the target over time.
 - **Armored Lurk**: Passive durability.
 - **Swamp Aura**: Adjacent enemies suffer a debuff.
@@ -392,7 +394,7 @@ These are intended build directions, not hard restrictions.
 - **Light Frame**: Passive dodge improvement.
 - **Dive Strike**: Active attack that can ignore normal closest-target rules and establishes Agility as Flyer's basic damage stat.
 - **Sharp Eyes**: Passive critical or targeting improvement.
-- **Wingbeat**: Active self-movement technique that improves this unit's evasiveness.
+- **Wingbeat**: Active self-technique that improves this unit's evasiveness.
 
 ### Bird of Prey
 
@@ -476,7 +478,7 @@ These are intended build directions, not hard restrictions.
 
 ### Pteranodon
 
-- **Innate - Open Sky Control**: Controls enemy positioning and target access.
+- **Innate - Open Sky Control**: Controls target access and punishes enemy formations.
 - **Aerial Hook**: Active attack against mid/back targets.
 - **Gale Push**: Active line disruption.
 - **Glide Pattern**: Passive dodge/cooldown value.
