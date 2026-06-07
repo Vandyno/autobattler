@@ -185,7 +185,7 @@ These are intended build directions, not hard restrictions.
 
 - **Thick Hide**: Passive that improves survivability.
 - **Heavy Bite**: Active attack against the closest enemy that establishes Strength as Dino's basic damage stat.
-- **Battle Roar**: Active self-technique that improves this unit's combat presence.
+- **Battle Roar**: Directly increases this unit's Health.
 - **Enduring Heart**: Passive that improves health recovery and staying power.
 
 ### Herbivore
