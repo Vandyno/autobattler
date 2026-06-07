@@ -531,6 +531,50 @@ When a character levels up, they gain a stat point that can be assigned to one p
 - Lifesteal
 - Thorns
 
+## Ability Tags And Modifier Hooks
+
+All abilities should have tags so equipment and future systems can modify groups of abilities consistently.
+
+Example modifier hooks:
+
+- Armour that doubles Aura abilities
+- Weapons that increase a damage type
+- Items that improve Poison duration, Bleed pressure, Physical attacks, or Self effects
+
+Draft ability tags:
+
+- **Physical**: Deals or scales with physical damage.
+- **Poison**: Applies or improves Poison.
+- **Bleed**: Applies or improves Bleed.
+- **Self**: Affects only the user.
+- **Ally**: Affects one or more allies.
+- **Enemy**: Affects one or more enemies.
+- **Aura**: Applies an ongoing effect based on adjacent slots or defined range.
+- **Adjacent**: Uses adjacent slots as part of targeting or effect range.
+- **Line**: Uses front/mid/back lines or straight battlefield paths.
+- **Cluster**: Affects a small group around a slot or target.
+- **Passive**: Always-on or conditional effect without a cooldown trigger.
+- **Active**: Fires automatically on cooldown once unlocked.
+- **Cooldown**: Uses cooldown or meter-based ability timing.
+- **Attack**: Performs a basic damaging action.
+- **Spell**: Uses Ability Power or Cast Speed as its main identity.
+- **Buff**: Applies a positive effect.
+- **Debuff**: Applies a negative effect.
+- **Cleanse**: Removes or shortens negative effects.
+- **Interrupt**: Disrupts an active ability or cast.
+- **Control**: Restricts ability use, target choice, or combat pressure.
+- **Shield**: Adds temporary protection or damage prevention.
+- **Thorns**: Returns damage to attackers.
+- **Healing**: Restores Health or improves recovery.
+- **Targeting**: Changes normal target access or priority rules.
+
+Tagging rules:
+
+- Tags should describe what an ability does, not its flavor name.
+- Tags should be broad enough for equipment to modify them.
+- Avoid one-off tags unless a real item or system needs them.
+- If an ability has multiple behaviors, it should have multiple tags.
+
 ## Damage And Effects
 
 Current damage types:
