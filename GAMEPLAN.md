@@ -402,14 +402,14 @@ These are intended build directions, not hard restrictions.
 
 - **Innate - Predator's Angle**: Can pressure priority targets more easily.
 - **Talon Rake**: Active attack that applies bleed.
-- **Mark Prey**: Debuff that makes one enemy easier to focus.
+- **Keen Hunt**: Debuff that improves this unit's pressure against injured or isolated enemies.
 - **High Perch**: Passive bonus from back or mid positions.
 - **Kill Window**: Buff that improves attacks against injured enemies.
 
 ### Eagle
 
-- **Innate - Commanding Wings**: Improves nearby allies when attacking marked targets.
-- **Royal Dive**: Active strike against a marked or vulnerable enemy.
+- **Innate - Commanding Wings**: Improves nearby allies when this unit pressures injured or isolated targets.
+- **Royal Dive**: Active strike against an injured or vulnerable enemy.
 - **Sky Standard**: Aura that improves adjacent allies' offense.
 - **Ripping Talons**: Active bleed-focused attack.
 - **Apex Vision**: Passive that improves target selection and crits.
@@ -419,7 +419,7 @@ These are intended build directions, not hard restrictions.
 - **Innate - Blinding Speed**: Rewards high attack speed and cooldown cycling.
 - **Flash Dive**: Very fast active attack.
 - **Feinting Arc**: Buff that improves dodge after attacking.
-- **Rapid Mark**: Debuff that supports repeated hits.
+- **Rapid Pressure**: Debuff that rewards repeated hits without guaranteeing target selection.
 - **Terminal Velocity**: Passive that boosts the next strike after waiting.
 
 ### Owl
@@ -550,7 +550,6 @@ This is a review list before numbers are added.
 - **Weaken**: Reduces outgoing damage or pressure.
 - **Armor Reduction**: Lowers physical durability so follow-up physical damage matters more.
 - **Healing Reduction**: Lowers healing received.
-- **Mark**: Makes a target easier to prioritize or focus.
 - **Taunt/Challenge**: Encourages or forces enemies to target a specific unit.
 - **Interrupt**: Disrupts an active ability or cast.
 - **Control/Bind**: Restricts a target's ability usage, target choice, or combat pressure without moving it.
@@ -571,7 +570,7 @@ These are conceptual combat functions to define before implementation.
 - **Piercing Line Attack**: Targets along a straight path and can hit past the closest enemy.
 - **Adjacent Attack**: Targets enemies adjacent to the primary target or adjacent to the attacker.
 - **Cluster Attack**: Targets a small group around a target slot.
-- **Priority Target Attack**: Targets an enemy based on a rule such as lowest Health, marked, injured, backline, or highest threat.
+- **Priority Target Attack**: Targets an enemy based on a rule such as lowest Health, injured, backline, isolated, or highest threat. This should be rare and species-specific, not a universal focus mechanic.
 - **Self Effect**: Applies a stat increase, self-technique, or self-only passive result.
 - **Ally Aura**: Applies an effect to adjacent allied slots.
 - **Enemy Aura**: Applies an effect to adjacent or nearby enemy slots.
