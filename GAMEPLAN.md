@@ -40,7 +40,11 @@ Attack Speed and Cast Speed use meter-based timing. The exact fill-rate formulas
 
 Units do not move during combat after the fight begins. Formation choices matter because starting slots affect distance, targeting, adjacency, lines, and aura coverage.
 
-Normal attacks usually target the closest enemy. Midline and backline characters can be attacked if they are closer than a frontline character. Abilities, class traits, equipment, or combat context may override this. Flyers are expected to attack from the back line, so their identity should come from how they use that safer position rather than from universal enemy-backline targeting.
+Normal attacks usually target the closest enemy. Midline and backline characters can be attacked if they are closer than a frontline character. Abilities, class traits, equipment, or combat context may override this.
+
+Formation should reward good relationships between units without forcing one mandatory slot. Prefer positive effects based on allies, adjacency, lines, coverage, or protection over abilities that simply say a unit must stand in a specific row.
+
+Flyers can attack effectively from safer positions, but they should not have special targeting as a shared baseline. Unusual target access should come from specific abilities, not from being a Flyer by default.
 
 For now, defeated team members revive after combat.
 
@@ -149,7 +153,7 @@ Assumptions for this draft:
 - Starter abilities are simple and self-focused, with no buffs, debuffs, auras, or team-facing effects.
 - Subclasses specialize, and final evolutions are unique or build-defining.
 - Abilities should create stat archetypes, not just generic effects. A player should be able to tell what stats and items a species wants.
-- Avoid making all flyers feel like "the unit that attacks the enemy backline." Their shared baseline is attacking from the player's back line. Their branches should split into leader, assassin, curse support, flock support, mimicry, control, bleed, and large-threat identities.
+- Avoid making all flyers feel like "the unit that attacks the enemy backline." Their branches should split into leader, assassin, curse support, flock support, mimicry, control, bleed, and large-threat identities. Special target access should appear only on specific abilities that clearly say they change targeting.
 
 ### Final Evolution Stat Targets
 
@@ -353,7 +357,7 @@ These are intended build directions, not hard restrictions.
 
 ### Gecko
 
-- **Innate - Wall Climber**: Gains evasive value from non-front positions.
+- **Innate - Wall Climber**: Gains evasive value from allies creating space or cover.
 - **Sticky Feet**: Passive dodge/control resistance.
 - **Tail Drop**: Defensive active that escapes danger.
 - **Bright Chirp**: Buff for adjacent allies.
@@ -361,7 +365,7 @@ These are intended build directions, not hard restrictions.
 
 ### Crocodilian
 
-- **Innate - Ambush Predator**: Stronger opening attacks from stable positions.
+- **Innate - Ambush Predator**: Stronger opening attacks when allies help hold enemies in place.
 - **Crushing Jaws**: Active close-range attack.
 - **Mud Hex**: Debuff that slows enemies.
 - **River Hide**: Passive armor/resistance.
@@ -394,7 +398,7 @@ These are intended build directions, not hard restrictions.
 ### FLYER
 
 - **Light Frame**: Passive dodge improvement.
-- **Dive Strike**: Active attack that can ignore normal closest-target rules and establishes Agility as Flyer's basic damage stat.
+- **Dive Strike**: Active attack that establishes Agility as Flyer's basic damage stat.
 - **Sharp Eyes**: Passive critical or targeting improvement.
 - **Wingbeat**: Active self-technique that improves this unit's evasiveness.
 
@@ -403,7 +407,7 @@ These are intended build directions, not hard restrictions.
 - **Innate - Predator's Angle**: Can pressure priority targets more easily.
 - **Talon Rake**: Active attack that applies bleed.
 - **Keen Hunt**: Debuff that improves this unit's pressure against injured or isolated enemies.
-- **High Perch**: Passive bonus from back or mid positions.
+- **High Perch**: Passive bonus when protected by nearby allies.
 - **Kill Window**: Buff that improves attacks against injured enemies.
 
 ### Eagle
@@ -684,6 +688,8 @@ Subclass and final-form abilities are where team-facing effects, debuffs, auras,
 
 Targeting should use named target rules rather than custom logic per ability whenever possible.
 
+Targeting rules should not create family-wide exceptions. A class can have abilities that change target access, but the class itself should still use normal targeting unless a specific ability says otherwise.
+
 Initial target rules to support:
 
 - Self
@@ -697,7 +703,7 @@ Initial target rules to support:
 - Injured enemy
 - Priority enemy
 
-Priority enemy targeting should remain rare. It should be reserved for specific species identities, especially some Flyer branches, not treated as a generic best-target system.
+Priority enemy targeting should remain rare. It should be reserved for specific ability effects, not treated as a generic best-target system or a Flyer default.
 
 ### Timing Plan
 
