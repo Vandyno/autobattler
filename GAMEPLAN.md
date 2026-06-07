@@ -544,8 +544,8 @@ Physical Resistance reduces physical damage. Debuff Resistance reduces how long 
 
 This is a review list before numbers are added.
 
-- **Poison**: Damage-over-time effect, likely associated with Reptiles and Intelligence builds.
-- **Bleed**: Damage-over-time effect, likely associated with Flyers, Carnivores, and repeated physical hits.
+- **Poison**: Damage-over-time effect that leans toward Intelligence and Ability Power. It tends to last longer and is mainly associated with Reptiles.
+- **Bleed**: Damage-over-time effect that leans toward Attack Damage, Agility, and repeated hits. It is mainly associated with Flyers and Carnivores.
 - **Slow**: Reduces attack timing or cast timing.
 - **Weaken**: Reduces outgoing damage or pressure.
 - **Armor Reduction**: Lowers physical durability so follow-up physical damage matters more.
