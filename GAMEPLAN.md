@@ -502,9 +502,9 @@ When a character levels up, they gain a stat point that can be assigned to one p
 
 ### Primary
 
-- Strength: Affects HP and Resistance
-- Agility: Affects dodge chance and attack speed
-- Intelligence: Affects cast speed and damage
+- Strength: Adds 10 Health and 1 Physical Resistance
+- Agility: Adds 1 Dodge Chance and 1 Attack Speed
+- Intelligence: Adds 1 Cast Speed and 1 Ability Power
 
 ### Offense
 
@@ -529,6 +529,55 @@ When a character levels up, they gain a stat point that can be assigned to one p
 - Lifesteal
 - Thorns
 
+## Damage And Effects
+
+Current damage types:
+
+- Physical
+- Poison/Bleed
+
+Physical Resistance reduces physical damage. Debuff Resistance reduces how long effects remain on the unit.
+
+### Draft Status Effects
+
+This is a review list before numbers are added.
+
+- **Poison**: Damage-over-time effect, likely associated with Reptiles and Intelligence builds.
+- **Bleed**: Damage-over-time effect, likely associated with Flyers, Carnivores, and repeated physical hits.
+- **Slow**: Reduces attack timing or cast timing.
+- **Weaken**: Reduces outgoing damage or pressure.
+- **Armor Reduction**: Lowers physical durability so follow-up physical damage matters more.
+- **Healing Reduction**: Lowers healing received.
+- **Mark**: Makes a target easier to prioritize or focus.
+- **Taunt/Challenge**: Encourages or forces enemies to target a specific unit.
+- **Interrupt**: Disrupts an active ability or cast.
+- **Control/Bind**: Restricts a target's ability usage, target choice, or combat pressure without moving it.
+- **Cleanse**: Removes or shortens negative effects.
+- **Shield/Guard**: Adds temporary protection or damage prevention.
+- **Thorns**: Returns damage to attackers.
+- **Dodge Up**: Improves chance to avoid attacks.
+- **Attack Speed Up**: Improves basic attack timing.
+- **Cast Speed Up**: Improves ability timing.
+- **Ability Power Up**: Improves ability damage or effect strength.
+
+### Draft Attack And Target Function Types
+
+These are conceptual combat functions to define before implementation.
+
+- **Closest Target Attack**: Targets the closest valid enemy by grid distance.
+- **Line Attack**: Targets enemies in a front/mid/back line.
+- **Piercing Line Attack**: Targets along a straight path and can hit past the closest enemy.
+- **Adjacent Attack**: Targets enemies adjacent to the primary target or adjacent to the attacker.
+- **Cluster Attack**: Targets a small group around a target slot.
+- **Priority Target Attack**: Targets an enemy based on a rule such as lowest Health, marked, injured, backline, or highest threat.
+- **Self Effect**: Applies a stat increase, self-technique, or self-only passive result.
+- **Ally Aura**: Applies an effect to adjacent allied slots.
+- **Enemy Aura**: Applies an effect to adjacent or nearby enemy slots.
+- **Damage Over Time Application**: Applies Poison or Bleed.
+- **Debuff Application**: Applies a named negative status effect.
+- **Buff Application**: Applies a named positive status effect.
+- **Cleanse/Remove Effect**: Removes or shortens buffs or debuffs.
+
 ## Design Priorities
 
 - Clear dinosaur/stat/ability data structures
@@ -545,6 +594,7 @@ When a character levels up, they gain a stat point that can be assigned to one p
 - Whether final forms should be strict upgrades, sidegrades, or build-defining transformations
 - How equipment should interact with class identity
 - How the 3-across and 6-down grid maps to each side's formation slots
+- How the real-time timing model should work for Attack Speed, Cast Speed, cooldowns, and effect durations
 - What the player chooses between battles
 - How branching zones should generate risk and reward
 - What resources exist during a run
